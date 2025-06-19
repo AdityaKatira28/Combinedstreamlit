@@ -24,7 +24,7 @@ class DashboardManager:
         self._load_apps()
 
     def _load_apps(self):
-        # auto-discover any apps/*.py
+        # Auto-discover any apps/*.py
         for finder, name, ispkg in pkgutil.iter_modules(['apps']):
             try:
                 mod = importlib.import_module(f"apps.{name}")
@@ -57,7 +57,7 @@ class DashboardManager:
             with col:
                 m = data['instance'].get_metrics()
                 st.markdown(
-                    f"**{data['icon']} {name}**  
-                     **{m['primary_value']}**  
+                    f"**{data['icon']} {name}**  \
+                     **{m['primary_value']}**  \
                      _{m['primary_label']}_"
                 )
