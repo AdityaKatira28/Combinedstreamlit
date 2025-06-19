@@ -1,6 +1,5 @@
 import streamlit as st
 from core import DashboardManager
-from utils import apply_global_styles
 
 def main():
     st.set_page_config(
@@ -8,6 +7,8 @@ def main():
         layout="wide",
         initial_sidebar_state="collapsed"
     )
+    # Import utils here so path resolution works when main.py is run
+    from utils import apply_global_styles
     apply_global_styles()
     DashboardManager().render()
 
